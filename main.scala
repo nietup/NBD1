@@ -143,6 +143,28 @@ object main {
     println("-------------------------------------------------------")
   }
 
+  def task7(): Unit = {
+    case class Person(firstName : String, lastName : String)
+
+    def greet(p : Person) : String = p match {
+      case p if p.lastName == "Kmicic" => "Tys nie Babinicz, tys Kmicic!"
+      case p if p.firstName == "Andrzej" => "Andrzeju, nie denerwuj sie."
+      case p if p.firstName == "Pietia" => "Czy egzamin bedzie trudny?"
+      case _ => "Witaj, przybyszu!"
+    }
+
+    val p1 = new Person("fsefser", "ersfr")
+    val p2 = new Person("Andrzej", "Kmicic")
+    val p3 = new Person("Andrzej", "Kuklinowski")
+    val p4 = new Person("Pietia", "Pietia")
+
+    println(greet(p1))
+    println(greet(p2))
+    println(greet(p3))
+    println(greet(p4))
+
+  }
+
   def main(args: Array[String]) {
     task1
     task2
@@ -150,5 +172,6 @@ object main {
     task4
     task5
     task6
+    task7
   }
 }
