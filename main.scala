@@ -1,3 +1,4 @@
+import javax.sound.midi.Soundbank
 //import com.sun.prism.impl.Disposer.Record
 // TODO send repo link to pietia@
 
@@ -107,7 +108,37 @@ object main {
   }
 
   def task6(): Unit = {
-    
+    class BankAccount() {
+      private var _acc = 0.0
+      def acc = _acc
+
+      def this(startAmount : Float) {
+        this
+        _acc = startAmount
+      }
+
+      def deposit(amount : Float): Unit = {
+        _acc += amount
+      }
+
+      def withdraw(amount : Float): Unit = {
+        _acc -= amount
+      }
+    }
+
+    var ba = new BankAccount(100)
+    println(ba.acc)
+    ba.withdraw(50)
+    println(ba.acc)
+    ba.deposit(99)
+    println(ba.acc)
+    ba = new BankAccount
+    println(ba.acc)
+    ba.withdraw(50)
+    println(ba.acc)
+    ba.deposit(99)
+    println(ba.acc)
+//    ba.acc = 32
   }
 
   def main(args: Array[String]) {
