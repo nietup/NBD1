@@ -162,7 +162,15 @@ object main {
     println(greet(p2))
     println(greet(p3))
     println(greet(p4))
+    println("-------------------------------------------------------")
+  }
 
+  def task8(): Unit = {
+    def noZeroes(l : List[Int]) : List[Int] = l.filterNot(e => e == 0)
+
+    val noZeroesList = noZeroes(List(0, 1, 2, 3, 4, 0, 5, 6, 0, 7, 80, 9, 0, 0, 0))
+    noZeroesList.foreach(e => print(e + " "))
+    println("\n-------------------------------------------------------")
   }
 
   def main(args: Array[String]) {
@@ -173,5 +181,6 @@ object main {
     task5
     task6
     task7
+    task8
   }
 }
