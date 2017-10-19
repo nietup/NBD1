@@ -173,6 +173,13 @@ object main {
     println("\n-------------------------------------------------------")
   }
 
+  def task9(): Unit = {
+    def incrementList(l : List[Int]): List[Int] = l.map(e => e+1)
+
+    incrementList(List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)).foreach(e => print(e + " "))
+    println("\n-------------------------------------------------------")
+  }
+
   def main(args: Array[String]) {
     task1
     task2
@@ -182,5 +189,6 @@ object main {
     task6
     task7
     task8
+    task9
   }
 }
