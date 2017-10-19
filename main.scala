@@ -174,10 +174,16 @@ object main {
   }
 
   def task9(): Unit = {
-    def incrementList(l : List[Int]): List[Int] = l.map(e => e+1)
+    def incrementList(l : List[Int]) : List[Int] = l.map(e => e+1)
 
     incrementList(List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)).foreach(e => print(e + " "))
     println("\n-------------------------------------------------------")
+  }
+
+  def task10(): Unit = {
+    def someAbsolute(l : List[Double]) : List[Double] = l.map(e => if (e < 0 && e >= -5) -e else e)
+
+    someAbsolute(List(0.0, 1.0, -6.0, -5.1, -5.0, -1.0, 0.0)).foreach(e => print(e + " "))
   }
 
   def main(args: Array[String]) {
@@ -190,5 +196,6 @@ object main {
     task7
     task8
     task9
+    task10
   }
 }
