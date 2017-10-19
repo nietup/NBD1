@@ -108,21 +108,20 @@ object main {
   }
 
   def task6(): Unit = {
-    class BankAccount() {
-      private var _acc = 0.0
+    class BankAccount(startAmount : Float = 0.0f) {
+      private var _acc = startAmount
       def acc = _acc
-
-      def this(startAmount : Float) {
-        this
-        _acc = startAmount
-      }
 
       def deposit(amount : Float): Unit = {
         _acc += amount
       }
 
-      def withdraw(amount : Float): Unit = {
-        _acc -= amount
+      def withdraw(amount : Float): Boolean = {
+        if (amount > _acc)
+          return false
+        else
+          _acc -= amount
+        return true
       }
     }
 
@@ -138,7 +137,10 @@ object main {
     println(ba.acc)
     ba.deposit(99)
     println(ba.acc)
+    ba.withdraw(50)
+    println(ba.acc)
 //    ba.acc = 32
+    println("-------------------------------------------------------")
   }
 
   def main(args: Array[String]) {
