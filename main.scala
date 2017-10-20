@@ -1,7 +1,3 @@
-import javax.sound.midi.Soundbank
-//import com.sun.prism.impl.Disposer.Record
-// TODO send repo link to pietia@
-
 object main {
   def task1(): Unit = {
     val weekdays = List("Poniedzialek", "Wtoerk", "Sroda", "Czwartek", "Piatek", "Sobota", "Niedziela")
